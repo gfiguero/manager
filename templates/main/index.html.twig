@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cuentas L2planet{% endblock %}
+
+{% block body %}
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Gestor de cuentas L2planet</h1>
+            <p>
+                <a href="{{ path('app_login') }}" class="btn btn-primary my-2">Login</a>
+                <a href="{{ path('app_register') }}" class="btn btn-secondary my-2">Registro</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

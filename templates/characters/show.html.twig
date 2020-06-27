@@ -1,0 +1,242 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Characters{% endblock %}
+
+{% block body %}
+    <h1>Characters</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>AccountName</th>
+                <td>{{ character.accountName }}</td>
+            </tr>
+            <tr>
+                <th>Charid</th>
+                <td>{{ character.charid }}</td>
+            </tr>
+            <tr>
+                <th>CharName</th>
+                <td>{{ character.charName }}</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>{{ character.level ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Maxhp</th>
+                <td>{{ character.maxhp }}</td>
+            </tr>
+            <tr>
+                <th>Curhp</th>
+                <td>{{ character.curhp }}</td>
+            </tr>
+            <tr>
+                <th>Maxcp</th>
+                <td>{{ character.maxcp }}</td>
+            </tr>
+            <tr>
+                <th>Curcp</th>
+                <td>{{ character.curcp }}</td>
+            </tr>
+            <tr>
+                <th>Maxmp</th>
+                <td>{{ character.maxmp }}</td>
+            </tr>
+            <tr>
+                <th>Curmp</th>
+                <td>{{ character.curmp }}</td>
+            </tr>
+            <tr>
+                <th>Face</th>
+                <td>{{ character.face ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Hairstyle</th>
+                <td>{{ character.hairstyle ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Haircolor</th>
+                <td>{{ character.haircolor ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Sex</th>
+                <td>{{ character.sex ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Heading</th>
+                <td>{{ character.heading }}</td>
+            </tr>
+            <tr>
+                <th>X</th>
+                <td>{{ character.x }}</td>
+            </tr>
+            <tr>
+                <th>Y</th>
+                <td>{{ character.y }}</td>
+            </tr>
+            <tr>
+                <th>Z</th>
+                <td>{{ character.z }}</td>
+            </tr>
+            <tr>
+                <th>Exp</th>
+                <td>{{ character.exp }}</td>
+            </tr>
+            <tr>
+                <th>Expbeforedeath</th>
+                <td>{{ character.expbeforedeath }}</td>
+            </tr>
+            <tr>
+                <th>Sp</th>
+                <td>{{ character.sp }}</td>
+            </tr>
+            <tr>
+                <th>Karma</th>
+                <td>{{ character.karma }}</td>
+            </tr>
+            <tr>
+                <th>Fame</th>
+                <td>{{ character.fame }}</td>
+            </tr>
+            <tr>
+                <th>Pvpkills</th>
+                <td>{{ character.pvpkills }}</td>
+            </tr>
+            <tr>
+                <th>Pkkills</th>
+                <td>{{ character.pkkills }}</td>
+            </tr>
+            <tr>
+                <th>Clanid</th>
+                <td>{{ character.clanid }}</td>
+            </tr>
+            <tr>
+                <th>Race</th>
+                <td>{{ character.race ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Classid</th>
+                <td>{{ character.classid ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>BaseClass</th>
+                <td>{{ character.baseClass ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>TransformId</th>
+                <td>{{ character.transformId }}</td>
+            </tr>
+            <tr>
+                <th>Deletetime</th>
+                <td>{{ character.deletetime }}</td>
+            </tr>
+            <tr>
+                <th>Cancraft</th>
+                <td>{{ character.cancraft ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ character.title }}</td>
+            </tr>
+            <tr>
+                <th>TitleColor</th>
+                <td>{{ character.titleColor }}</td>
+            </tr>
+            <tr>
+                <th>Accesslevel</th>
+                <td>{{ character.accesslevel }}</td>
+            </tr>
+            <tr>
+                <th>Online</th>
+                <td>{{ character.online ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Onlinetime</th>
+                <td>{{ character.onlinetime }}</td>
+            </tr>
+            <tr>
+                <th>CharSlot</th>
+                <td>{{ character.charSlot ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Newbie</th>
+                <td>{{ character.newbie }}</td>
+            </tr>
+            <tr>
+                <th>Lastaccess</th>
+                <td>{{ character.lastaccess }}</td>
+            </tr>
+            <tr>
+                <th>ClanPrivs</th>
+                <td>{{ character.clanPrivs }}</td>
+            </tr>
+            <tr>
+                <th>Wantspeace</th>
+                <td>{{ character.wantspeace ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Isin7sdungeon</th>
+                <td>{{ character.isin7sdungeon ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>PowerGrade</th>
+                <td>{{ character.powerGrade ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Nobless</th>
+                <td>{{ character.nobless ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Subpledge</th>
+                <td>{{ character.subpledge }}</td>
+            </tr>
+            <tr>
+                <th>LvlJoinedAcademy</th>
+                <td>{{ character.lvlJoinedAcademy ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Apprentice</th>
+                <td>{{ character.apprentice }}</td>
+            </tr>
+            <tr>
+                <th>Sponsor</th>
+                <td>{{ character.sponsor }}</td>
+            </tr>
+            <tr>
+                <th>ClanJoinExpiryTime</th>
+                <td>{{ character.clanJoinExpiryTime }}</td>
+            </tr>
+            <tr>
+                <th>ClanCreateExpiryTime</th>
+                <td>{{ character.clanCreateExpiryTime }}</td>
+            </tr>
+            <tr>
+                <th>DeathPenaltyLevel</th>
+                <td>{{ character.deathPenaltyLevel }}</td>
+            </tr>
+            <tr>
+                <th>Bookmarkslot</th>
+                <td>{{ character.bookmarkslot }}</td>
+            </tr>
+            <tr>
+                <th>VitalityPoints</th>
+                <td>{{ character.vitalityPoints }}</td>
+            </tr>
+            <tr>
+                <th>Createdate</th>
+                <td>{{ character.createdate ? character.createdate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Language</th>
+                <td>{{ character.language }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('characters_index') }}">back to list</a>
+
+    <a href="{{ path('characters_edit', {'charid': character.charid}) }}">edit</a>
+
+    {{ include('characters/_delete_form.html.twig') }}
+{% endblock %}

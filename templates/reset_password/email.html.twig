@@ -1,0 +1,16 @@
+<h1>Hola!</h1>
+
+<p>
+    Estimado {{ user }},<br>
+    Para restablecer tu clave, ingresa al siguiente enlace: <br><br>
+    <a href="{{ url('app_reset_password', {token: resetToken.token}) }}">Restablecer password</a><br><br>
+    Este enlace expira en {{ tokenLifetime|date('g') }} horas.
+</p>
+
+<p>Si no puedes ver el enlace, copia y pega la siguiente URL:</p>
+
+<p><code>{{ url('app_reset_password', {token: resetToken.token}) }}</code></p>
+
+<p>Saludos!.</p>
+
+<p>El equipo de L2planet.</p>

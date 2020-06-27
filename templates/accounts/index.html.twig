@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accounts index{% endblock %}
+
+{% block body %}
+    <h1>Accounts index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Login</th>
+                <th>Email</th>
+                <th>Creación</th>
+                <th>Actividad</th>
+                <th>Ip</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for account in accounts %}
+            <tr>
+                <td>{{ account.login }}</td>
+                <td>{{ account.email }}</td>
+                <td>{{ account.createdTime ? account.createdTime|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ account.lastactive }}</td>
+                <td>{{ account.lastip }}</td>
+                <td>
+                    <a href="{{ path('accounts_characters', {'login': account.login}) }}">Personajes</a>
+{#}
+                    <a href="{{ path('accounts_show', {'login': account.login}) }}">show</a>
+                    <a href="{{ path('accounts_edit', {'login': account.login}) }}">edit</a>
+{#}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('accounts_new') }}">Create new</a>
+{% endblock %}

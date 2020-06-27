@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Password Reset Email Sent{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4 col-xl-4 mt-3">
+                <h1 class="h3 mb-3 font-weight-normal">Restablecer password</h1>
+
+                {% for flashError in app.flashes('reset_password_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                {% endfor %}
+
+                <p>Hemos enviado un email con el enlace de restablecimiento de password. El link expirará en {{ tokenLifetime|date('g') }} horas.</p>
+                <p>Si no has recibido un email todavía, revisa en SPAM o <a href="{{ path('app_forgot_password_request') }}">Intenta nuevamente</a>.</p>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

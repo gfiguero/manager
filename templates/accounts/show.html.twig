@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accounts{% endblock %}
+
+{% block body %}
+    <h1>Accounts</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Login</th>
+                <td>{{ account.login }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ account.password }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ account.email }}</td>
+            </tr>
+            <tr>
+                <th>CreatedTime</th>
+                <td>{{ account.createdTime ? account.createdTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Lastactive</th>
+                <td>{{ account.lastactive }}</td>
+            </tr>
+            <tr>
+                <th>Accesslevel</th>
+                <td>{{ account.accesslevel ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Lastip</th>
+                <td>{{ account.lastip }}</td>
+            </tr>
+            <tr>
+                <th>Lastserver</th>
+                <td>{{ account.lastserver ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Pcip</th>
+                <td>{{ account.pcip }}</td>
+            </tr>
+            <tr>
+                <th>Hop1</th>
+                <td>{{ account.hop1 }}</td>
+            </tr>
+            <tr>
+                <th>Hop2</th>
+                <td>{{ account.hop2 }}</td>
+            </tr>
+            <tr>
+                <th>Hop3</th>
+                <td>{{ account.hop3 }}</td>
+            </tr>
+            <tr>
+                <th>Hop4</th>
+                <td>{{ account.hop4 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('accounts_index') }}">back to list</a>
+
+    <a href="{{ path('accounts_edit', {'login': account.login}) }}">edit</a>
+
+    {{ include('accounts/_delete_form.html.twig') }}
+{% endblock %}

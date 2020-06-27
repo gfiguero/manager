@@ -1,0 +1,4 @@
+jms_payment_paypal:
+    username: gfiguero_api1.gmail.com # not your account username
+    password: AXDWL5YCCFR5RJTH # not your account password
+    signature: AtalSXZqOIwaRKrKBNcygIvi6P3BA4m5aeB.aqh6BSNmZagB-geLiaJI

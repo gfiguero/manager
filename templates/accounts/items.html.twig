@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Items de personaje: {{ character.charName }}{% endblock %}
+
+{% block body %}
+    <h1>Items</h1>
+
+    <table class="table">
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <th>Item</th>
+                <td>{{ item.itemId }}</td>
+                <td>{{ item.count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('accounts_coins', {'login': account.login, 'character': character.charid}) }}">Agregar Coins</a>
+
+{% endblock %}

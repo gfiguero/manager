@@ -1,0 +1,143 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Characters index{% endblock %}
+
+{% block body %}
+    <h1>Characters index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>AccountName</th>
+                <th>Charid</th>
+                <th>CharName</th>
+                <th>Level</th>
+                <th>Maxhp</th>
+                <th>Curhp</th>
+                <th>Maxcp</th>
+                <th>Curcp</th>
+                <th>Maxmp</th>
+                <th>Curmp</th>
+                <th>Face</th>
+                <th>Hairstyle</th>
+                <th>Haircolor</th>
+                <th>Sex</th>
+                <th>Heading</th>
+                <th>X</th>
+                <th>Y</th>
+                <th>Z</th>
+                <th>Exp</th>
+                <th>Expbeforedeath</th>
+                <th>Sp</th>
+                <th>Karma</th>
+                <th>Fame</th>
+                <th>Pvpkills</th>
+                <th>Pkkills</th>
+                <th>Clanid</th>
+                <th>Race</th>
+                <th>Classid</th>
+                <th>BaseClass</th>
+                <th>TransformId</th>
+                <th>Deletetime</th>
+                <th>Cancraft</th>
+                <th>Title</th>
+                <th>TitleColor</th>
+                <th>Accesslevel</th>
+                <th>Online</th>
+                <th>Onlinetime</th>
+                <th>CharSlot</th>
+                <th>Newbie</th>
+                <th>Lastaccess</th>
+                <th>ClanPrivs</th>
+                <th>Wantspeace</th>
+                <th>Isin7sdungeon</th>
+                <th>PowerGrade</th>
+                <th>Nobless</th>
+                <th>Subpledge</th>
+                <th>LvlJoinedAcademy</th>
+                <th>Apprentice</th>
+                <th>Sponsor</th>
+                <th>ClanJoinExpiryTime</th>
+                <th>ClanCreateExpiryTime</th>
+                <th>DeathPenaltyLevel</th>
+                <th>Bookmarkslot</th>
+                <th>VitalityPoints</th>
+                <th>Createdate</th>
+                <th>Language</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for character in characters %}
+            <tr>
+                <td>{{ character.accountName }}</td>
+                <td>{{ character.charid }}</td>
+                <td>{{ character.charName }}</td>
+                <td>{{ character.level ? 'Yes' : 'No' }}</td>
+                <td>{{ character.maxhp }}</td>
+                <td>{{ character.curhp }}</td>
+                <td>{{ character.maxcp }}</td>
+                <td>{{ character.curcp }}</td>
+                <td>{{ character.maxmp }}</td>
+                <td>{{ character.curmp }}</td>
+                <td>{{ character.face ? 'Yes' : 'No' }}</td>
+                <td>{{ character.hairstyle ? 'Yes' : 'No' }}</td>
+                <td>{{ character.haircolor ? 'Yes' : 'No' }}</td>
+                <td>{{ character.sex ? 'Yes' : 'No' }}</td>
+                <td>{{ character.heading }}</td>
+                <td>{{ character.x }}</td>
+                <td>{{ character.y }}</td>
+                <td>{{ character.z }}</td>
+                <td>{{ character.exp }}</td>
+                <td>{{ character.expbeforedeath }}</td>
+                <td>{{ character.sp }}</td>
+                <td>{{ character.karma }}</td>
+                <td>{{ character.fame }}</td>
+                <td>{{ character.pvpkills }}</td>
+                <td>{{ character.pkkills }}</td>
+                <td>{{ character.clanid }}</td>
+                <td>{{ character.race ? 'Yes' : 'No' }}</td>
+                <td>{{ character.classid ? 'Yes' : 'No' }}</td>
+                <td>{{ character.baseClass ? 'Yes' : 'No' }}</td>
+                <td>{{ character.transformId }}</td>
+                <td>{{ character.deletetime }}</td>
+                <td>{{ character.cancraft ? 'Yes' : 'No' }}</td>
+                <td>{{ character.title }}</td>
+                <td>{{ character.titleColor }}</td>
+                <td>{{ character.accesslevel }}</td>
+                <td>{{ character.online ? 'Yes' : 'No' }}</td>
+                <td>{{ character.onlinetime }}</td>
+                <td>{{ character.charSlot ? 'Yes' : 'No' }}</td>
+                <td>{{ character.newbie }}</td>
+                <td>{{ character.lastaccess }}</td>
+                <td>{{ character.clanPrivs }}</td>
+                <td>{{ character.wantspeace ? 'Yes' : 'No' }}</td>
+                <td>{{ character.isin7sdungeon ? 'Yes' : 'No' }}</td>
+                <td>{{ character.powerGrade ? 'Yes' : 'No' }}</td>
+                <td>{{ character.nobless ? 'Yes' : 'No' }}</td>
+                <td>{{ character.subpledge }}</td>
+                <td>{{ character.lvlJoinedAcademy ? 'Yes' : 'No' }}</td>
+                <td>{{ character.apprentice }}</td>
+                <td>{{ character.sponsor }}</td>
+                <td>{{ character.clanJoinExpiryTime }}</td>
+                <td>{{ character.clanCreateExpiryTime }}</td>
+                <td>{{ character.deathPenaltyLevel }}</td>
+                <td>{{ character.bookmarkslot }}</td>
+                <td>{{ character.vitalityPoints }}</td>
+                <td>{{ character.createdate ? character.createdate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ character.language }}</td>
+                <td>
+                    <a href="{{ path('characters_show', {'charid': character.charid}) }}">show</a>
+                    <a href="{{ path('characters_edit', {'charid': character.charid}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="57">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('characters_new') }}">Create new</a>
+{% endblock %}

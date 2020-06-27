@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Items index{% endblock %}
+
+{% block body %}
+    <h1>Items index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ObjectId</th>
+                <th>OwnerId</th>
+                <th>ItemId</th>
+                <th>Count</th>
+                <th>EnchantLevel</th>
+                <th>Loc</th>
+                <th>LocData</th>
+                <th>TimeOfUse</th>
+                <th>CustomType1</th>
+                <th>CustomType2</th>
+                <th>ManaLeft</th>
+                <th>Time</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.objectId }}</td>
+                <td>{{ item.ownerId }}</td>
+                <td>{{ item.itemId }}</td>
+                <td>{{ item.count }}</td>
+                <td>{{ item.enchantLevel }}</td>
+                <td>{{ item.loc }}</td>
+                <td>{{ item.locData }}</td>
+                <td>{{ item.timeOfUse }}</td>
+                <td>{{ item.customType1 }}</td>
+                <td>{{ item.customType2 }}</td>
+                <td>{{ item.manaLeft }}</td>
+                <td>{{ item.time }}</td>
+                <td>
+                    <a href="{{ path('items_show', {'objectId': item.objectId}) }}">show</a>
+                    <a href="{{ path('items_edit', {'objectId': item.objectId}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="13">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('items_new') }}">Create new</a>
+{% endblock %}

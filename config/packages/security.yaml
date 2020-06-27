@@ -1,0 +1,44 @@
+security:
+    encoders:
+        App\Entity\Account:
+            #algorithm: auto
+            id: 'App\Security\L2Encoder'
+
+    # https://symfony.com/doc/current/security.html#where-do-accounts-come-from-account-providers
+    providers:
+        # used to reload account from session & other features (e.g. switch_account)
+        app_account_provider:
+            entity:
+                class: App\Entity\Account
+                property: login
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: lazy
+            provider: app_account_provider
+            #user_checker: App\Security\UserChecker
+            guard:
+                authenticators:
+                    - App\Security\L2Authenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                # target: app_any_route
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_account.html
+            # switch_account: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/reset-password, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/verify/email, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: IS_AUTHENTICATED_FULLY }

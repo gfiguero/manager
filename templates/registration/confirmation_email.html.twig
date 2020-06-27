@@ -1,0 +1,16 @@
+<h1>Hola!</h1>
+
+<p>
+    Estimado {{ user }},<br>
+    Por favor, confirma tu dirección de correo electrónico haciendo click en el siguiente enlace: <br><br>
+    <a href="{{ signedUrl|raw }}">Confirmar correo</a><br><br>
+    Este enlace caducará en {{ expiresAt|date('g') }} horas.
+</p>
+
+<p>Si no puedes ver el enlace, copia y pega la siguiente URL:</p>
+
+<p><code>{{ signedUrl|raw }}</code></p>
+
+<p>Disfruta tu cuenta L2planet!</p>
+
+<p>El equipo de L2planet.</p>

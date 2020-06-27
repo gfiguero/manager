@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Items{% endblock %}
+
+{% block body %}
+    <h1>Items</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>ObjectId</th>
+                <td>{{ item.objectId }}</td>
+            </tr>
+            <tr>
+                <th>OwnerId</th>
+                <td>{{ item.ownerId }}</td>
+            </tr>
+            <tr>
+                <th>ItemId</th>
+                <td>{{ item.itemId }}</td>
+            </tr>
+            <tr>
+                <th>Count</th>
+                <td>{{ item.count }}</td>
+            </tr>
+            <tr>
+                <th>EnchantLevel</th>
+                <td>{{ item.enchantLevel }}</td>
+            </tr>
+            <tr>
+                <th>Loc</th>
+                <td>{{ item.loc }}</td>
+            </tr>
+            <tr>
+                <th>LocData</th>
+                <td>{{ item.locData }}</td>
+            </tr>
+            <tr>
+                <th>TimeOfUse</th>
+                <td>{{ item.timeOfUse }}</td>
+            </tr>
+            <tr>
+                <th>CustomType1</th>
+                <td>{{ item.customType1 }}</td>
+            </tr>
+            <tr>
+                <th>CustomType2</th>
+                <td>{{ item.customType2 }}</td>
+            </tr>
+            <tr>
+                <th>ManaLeft</th>
+                <td>{{ item.manaLeft }}</td>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <td>{{ item.time }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('items_index') }}">back to list</a>
+
+    <a href="{{ path('items_edit', {'objectId': item.objectId}) }}">edit</a>
+
+    {{ include('items/_delete_form.html.twig') }}
+{% endblock %}

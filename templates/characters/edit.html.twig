@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Characters{% endblock %}
+
+{% block body %}
+    <h1>Edit Characters</h1>
+
+    {{ include('characters/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('characters_index') }}">back to list</a>
+
+    {{ include('characters/_delete_form.html.twig') }}
+{% endblock %}

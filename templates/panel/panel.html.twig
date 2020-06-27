@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panel de control{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 mt-3">
+                <div class="form-row">
+                    <div class="col">
+                        <div class="card">
+                            {% if user.isVerified %}
+                            <div class="card-header bg-info text-white">
+                                <h2 class="card-title mb-0">Cuenta: {{ user.login }}</h2>
+                            </div>
+                            {% else %}
+                            <div class="card-header bg-danger text-white">
+                                <h2 class="card-title mb-0">Cuenta: {{ user.login }} - {{ 'Not verified'|trans }}</h2>
+                            </div>
+                            {% endif %}
+                            <div class="card-body">
+                                <dl class="form-row m-0">
+                                    <dt class="col-sm-5 text-sm-right">Fecha de registro</dt><dd class="col-sm-7">{{ user.createdTime|date("d/m/Y", "America/Santiago") }}</dd>
+                                    <dt class="col-sm-5 text-sm-right">Último ingreso</dt><dd class="col-sm-7">{% if user.lastactive %}{{ (user.lastactive // 1000)|date("d/m/Y", "America/Santiago") }}{% else %}{{ 'Nunca' }}{% endif %}</dd>
+                                    <dt class="col-sm-5 text-sm-right">Última ip</dt><dd class="col-sm-7">{{ user.lastIP|default('Ninguna') }}</dd>
+                                    <dt class="col-sm-5 text-sm-right">Email</dt><dd class="col-sm-7">{{ user.email }}</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% block panel %}{% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
